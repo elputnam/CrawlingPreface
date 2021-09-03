@@ -5,7 +5,7 @@ var fillHue;
 let wiggle = 0; 
 
 function setup() {
-  createCanvas(windowWidth, windowWidth);
+  createCanvas(windowWidth, windowHeight);
   colorMode(HSB, 360, 100, 100, 100);
   frameRate(30);
   tileCount = 40;
@@ -17,8 +17,8 @@ function draw() {
   outlineHue = map(mouseX, 0, width, 50, 150);
   fillHue = map(mouseY, 0, height, 300, 360);
   
-  for (var gridY = 0; gridY < width; gridY += tileCount) {
-    for (var gridX = 0; gridX < height; gridX += tileCount) {
+  for (var gridY = 0; gridY < height; gridY += tileCount) {
+    for (var gridX = 0; gridX < width; gridX += tileCount) {
       var diameter = dist(mouseX, mouseY, gridX, gridY);
       diameter = diameter / maxDistance * 40;
       fill(fillHue, random(100), random(100), 10);

@@ -21,7 +21,7 @@ function draw() {
     for (var gridX = 0; gridX < width; gridX += tileCount) {
       var diameter = dist(mouseX, mouseY, gridX, gridY);
       diameter = diameter / maxDistance * 40;
-      fill(fillHue, random(100), random(100), 10);
+      fill(fillHue, random(100), random(100), 50);
       stroke(outlineHue, random(100), random(100), 100);
       push();
       translate(gridX, gridY) //, diameter * 5);

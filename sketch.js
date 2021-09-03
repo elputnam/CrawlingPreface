@@ -2,6 +2,7 @@ var tileCount;
 var maxDistance;
 var outlineHue;
 var fillHue;
+var backgroundHue;
 let wiggle = 0; 
 
 function setup() {
@@ -13,9 +14,11 @@ function setup() {
 }
 
 function draw() {
-  background(200, random(100), random(100), 10);
-  outlineHue = map(mouseX, 0, width, 50, 150);
+  backgroundHue = (map(mouseX, 0, width, 100, 0));
+  background(backgroundHue, 10) //, random(100), random(100), 10);
+  outlineHue = map(mouseX, 0, width, 50, 200);
   fillHue = map(mouseY, 0, height, 300, 360);
+  
   
   for (var gridY = 0; gridY < height; gridY += tileCount) {
     for (var gridX = 0; gridX < width; gridX += tileCount) {
